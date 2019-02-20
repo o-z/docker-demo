@@ -24,7 +24,7 @@ node {
      }                                   
      mysql.stop()
    }  
-   nsiColor('xterm') {
+   ansiColor('xterm') {
         // Just some echoes to show the ANSI color.
         stage "\u001B[31m DOCKER PUSH BASLADI"
     }
