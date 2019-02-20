@@ -1,8 +1,4 @@
-String LIGHT_RED       = "\u001B[1;33m"
 
-static String color(String text, String ansiValue) {
-    ansiValue + text
-}
 node {
    def commit_id
    stage('Preparation') {
@@ -28,7 +24,10 @@ node {
      }                                   
      mysql.stop()
    }  
-   print color("DOCKER PUSH BASLADI", LIGHT_RED)
+   nsiColor('xterm') {
+        // Just some echoes to show the ANSI color.
+        stage "\u001B[31m DOCKER PUSH BASLADI"
+    }
    stage('docker build/push') {            
      docker.withRegistry('https://index.docker.io/v1/', 'dockerhub') {
        def app = docker.build("oguzzeyveli1/docker-nodejs-demo:${commit_id}", '.').push()
