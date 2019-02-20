@@ -26,7 +26,7 @@ node {
    }  
    ansiColor('xterm') {
         // Just some echoes to show the ANSI color.
-        stage "\u001B[32m DOCKER PUSH BASLADI"
+        stage " DOCKER PUSH BASLADI"
     }
    stage('docker build/push') {            
      docker.withRegistry('https://index.docker.io/v1/', 'dockerhub') {
